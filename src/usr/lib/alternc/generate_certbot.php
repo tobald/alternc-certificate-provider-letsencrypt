@@ -133,7 +133,7 @@ if ($REQUEST_CERTS == 'specific' && $domains !== NULL) {
         // or if the request is forced.
         if (sizeof($certs) <= 0  || $force_request) {
             vprint(_("Requesting import of certificate for '%s'"), array($domain));
-            $sub_domain = get_sub_domain_id_and_member_by_name($domain);
+            $sub_domain = m_dom::get_sub_domain_id_and_member_by_name($domain);
             if ($sub_domain === FALSE) {
                 vprint(_("Failed to find sub_domain id and member by name for '%s'"), array($domain));
                 continue;
