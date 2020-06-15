@@ -54,7 +54,7 @@ $domains = in_array('domains', array_keys($options)) ? $options['domains'] : (
     in_array('d', array_keys($options)) ? $options['d'] : NULL);
 if ($domains !== NULL) {
     $domains = explode(',', $domains);
-    $REQUEST_CERTS = 'sepcific';
+    $REQUEST_CERTS = 'specific';
 }
 $force_request = (in_array('f', array_keys($options)) || in_array('force', array_keys($options))) ? True : False;
 
