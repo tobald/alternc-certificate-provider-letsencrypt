@@ -79,7 +79,7 @@ class m_certbot
         if ($L_OTHER_IPS != '') {
             $ips = "$L_PUBLIC_IP,$L_OTHER_IPS";
             $arr = explode(',', $ips);
-        } else { 
+        } else {
             $arr = array($L_PUBLIC_IP);
         }
         $out=array();
