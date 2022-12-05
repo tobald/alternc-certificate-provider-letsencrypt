@@ -166,6 +166,7 @@ elseif ($REQUEST_CERTS == 'all' || $REQUEST_CERTS == 'non-system') {
                 continue;
             }
             foreach ($domain_data['sub'] as $sub_domain) {
+                if ($sub_domain['enable'] == 'DISABLED') continue;
                 if (in_array($sub_domain['type'], $is_vhost) &&
                     $is_vhost[strtolower($sub_domain["type"])]) {
                     $domainsList[] = array('sub_domain' => $sub_domain, 'cuid' => $cuid);
