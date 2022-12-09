@@ -1,3 +1,86 @@
+alternc-certificate-provider-letsencrypt (0.1.0) buster; urgency=medium
+
+  [ cam.lafit ]
+  * [enh] Ignore a debuild file
+  * [enh] Debuild with travis
+  * [enh] Push package to bintray services
+  * [enh] Autobuild a version on each commit
+  * [fix] Versions are incrementatl
+
+  [ Benjamin Sonntag ]
+  * - More precise english comments - Only get / renew certs when needed (start of code, not finished yet) - Only search for FQDN in subdomaines whose type is a Vhost - log success / failure of certbot launch in $msg - simpler DIG function
+  * [enh] finish the restriction in generate_certbot to renew only non-existing or expiring (in  days) certificates.
+
+  [ Kienan Stewart ]
+  * Remove and ignore debian/files
+  * Add git as a build dependency
+  * Add devscripts as a build dependency
+  * Do not fail when running dh clean if not in a git repository
+  * Do not change the version if a git repo isn't present
+  * Make getting the account id for a domain more reliable
+  * Import certificates for all sub domains during dns_reload_zone
+  * Fix error output of certbot runs
+
+  [ Km ]
+  * Don't forget certbot apacje dependency
+
+  [ kent1 ]
+  * Avoid a warning / notice if no certificate for the domain
+  * Avoid saving all the certificate to the last member ID
+
+  [ Km ]
+  * Change output exec should be in another commit
+
+  [ cam.lafit ]
+  * Typo on makefile
+
+  [ Kienan Stewart ]
+  * Check if vhost type is present before accessing value. Fixes #23
+  * Lower case vhost types during check
+  * Add check to skip domain's without subdomain data
+  * Reduce verbosity of the install.d/alternc-certbot
+  * Fix #39: Request system certificates before user certificates
+  * Move space so it's defined when system domains are requested
+  * Revert deletion of m_certbot.php
+  * Use quiet flag in cron job so alternc.install output can be verbose by default
+  * Check for letsencrypt account with acme-v02 in addition to acme-v01
+  * Add '-c' option to generate_certbot to choose which types of certificates to request
+  * Fix check for certificate_id
+  * Fix call to undefined function
+  * Fix condition for checking if a cert is still valid for 30 days
+  * Fix warning : undefined constant current
+  * Change parameter passed to generate_certbot.php to fix renewal
+  * Don't quote verbose in install script
+  * First pass at adding an option to request only specific certificates
+
+  [ Alban Crommer ]
+  * [fix] error in stretch command line
+
+  [ Kienan Stewart ]
+  * Fix option description strings
+  * Filter valid certificates for specific certificates requests
+  * When requesting specific certificates, su as the member
+  * Fix typo in request type check
+  * Fix crash when calling get_sub_domain_id_and_member_by_name
+
+  [ Guillaume Est Une Palourde ]
+  * Allow multiple IPs to be considered local
+  * Simplified code
+
+  [ Kienan Stewart ]
+  * Clean-up whitespace in m_certbot.php
+  * Clean-up whitespace in m_certbot.php
+
+  [ Nina ]
+  * FIX | Use vprint() to output the "finished renewal" msg
+  * Add python3-certbot-apache in dependancies
+
+  [ Christophe Siraut ]
+  * generate_certbot: skip disabled subdomains
+  * m_certbot: disable IDN in dig request
+
+ -- Christophe Siraut <d@tobald.eu.org>  Fri, 09 Dec 2022 09:59:04 +0100
+
 alternc-certificate-provider-letsencrypt (0.0.15) stable; urgency=low
 
   * initial AlternC Certificate provider for AlternC 3.5 for Jessie & Stretch
