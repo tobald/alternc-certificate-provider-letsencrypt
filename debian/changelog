@@ -1,3 +1,9 @@
+alternc-certificate-provider-letsencrypt (0.1.1) buster; urgency=medium
+
+  * m_certbot: disable dns tracing in order have cname records validated
+
+ -- Christophe Siraut <d@tobald.eu.org>  Fri, 07 Apr 2023 14:38:09 +0200
+
 alternc-certificate-provider-letsencrypt (0.1.0) buster; urgency=medium
 
   [ cam.lafit ]
